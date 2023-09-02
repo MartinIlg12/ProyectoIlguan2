@@ -1,4 +1,4 @@
-package com.itsqmet.ProyectoFinal.controller;
+package com.itsqmet.ProyectoIlguan2.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +13,5 @@ public class PaginaController {
     @GetMapping("/iniciar")
     public String iniciar(){
         return "iniciar";
-    }
-    @GetMapping("/registro")
-    public String registro(){
-        return "registro";
     }
 }

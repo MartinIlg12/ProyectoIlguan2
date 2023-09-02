@@ -1,4 +1,7 @@
-package com.itsqmet.ProyectoIlguan2;
+package com.itsqmet.ProyectoIlguan2.repositorios;
 
-public interface UsuarioRepository {
+import com.itsqmet.ProyectoIlguan2.entidades.Usuario;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UsuarioRepository extends JpaRepository <Usuario, Integer> {
 }

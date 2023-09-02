@@ -73,7 +73,6 @@ form .username{
     top: 50%;
     left: 5px;
     color: #ff2f28;
-    transform: translateY(-50%);
     font-size: 16px;
     pointer-events: none;
 }
@@ -85,7 +84,7 @@ form .username{
     width: 0%;
     height: 2px;
     background: #ff2f28;
-    transition: .5s;
+
 }
 .username input:focus ~ label,
 .username input:focus ~ label{
@@ -168,30 +167,36 @@ input[type="submit"]:hover{
             </ul>
         </nav>
     </div>
-    <div class="formulario">
+    <div class="formulario" >
         <h1>Registrate</h1>
-        <form method="post">
+        <form th:action="@{/registro}" method="post" th:object="${usuario}">
+
             <div class="username">
-                    <input type="text" required> 
-                    <label for="">Nombre de Usuario</label>
+                <input type="number" readonly="readonly" th:field="*{id}">
+                <label>ID </label>
+            </div>
+
+            <div class="username">
+                    <input type="text" required th:field="*{nombre}">
+                    <label>Nombre </label>
             </div>
                 <form method="post">
                     <div class="username">
-                            <input type="text" required> 
-                            <label for="">Correo</label>
+                            <input type="text" required th:field="*{correo}">
+                            <label>Correo</label>
                     </div>
                     <form method="post">
                         <div class="username">
-                                <input type="password" required> 
-                                <label for="">Contraseña</label>
+                                <input type="password" required th:field="*{contrasenia}">
+                                <label>Contraseña</label>
                         </div>
                         <form method="post">
                             <div class="username">
-                                    <input type="text" required> 
-                                    <label for="">Fecha de Nacimiento</label>
+                                    <input type="text" required th:field="*{fecha}">
+                                    <label>Fecha de Nacimiento</label>
                             </div>
-            <input type="submit" value="Iniciar"><br><br>
-            <label for="">Acepto todos los términos</label>
+            <input type="submit" value="Registrarse"><br><br>
+            <label>Acepto todos los términos</label>
             <input type="checkbox" id="menu"/>
         </form>
     </div>
