@@ -80,7 +80,7 @@ public class SecurityConfig {
     @Order(2)
     public SecurityFilterChain publicFilterChain(HttpSecurity http) throws Exception {
         http
-                .securityMatcher("/","/logout","/login")
+                .securityMatcher("/","/logout","/login", "/registro")
                 .authorizeHttpRequests(authorize -> authorize
                         .anyRequest().permitAll()
                 )
