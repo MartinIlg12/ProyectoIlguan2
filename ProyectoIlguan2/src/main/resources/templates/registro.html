@@ -163,7 +163,7 @@ input[type="submit"]:hover{
             <ul>
                 <li><a href="/">Peliculas</a></li>
                 <li><a href="/registro">Registro</a></li>
-                <li><a href="/iniciar">Login</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </nav>
     </div>
@@ -174,6 +174,10 @@ input[type="submit"]:hover{
             <div class="username">
                 <input type="number" readonly="readonly" th:field="*{id}">
                 <label>ID </label>
+            </div>
+            <div class="username">
+                <input type="text" required th:field="*{rol}">
+                <label>Rol</label>
             </div>
 
             <div class="username">

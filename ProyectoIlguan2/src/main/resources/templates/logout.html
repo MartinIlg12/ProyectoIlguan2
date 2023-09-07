@@ -161,44 +161,18 @@
             <ul>
                 <li><a href="/">Peliculas</a></li>
                 <li><a href="/registro">Registro</a></li>
-                <li><a href="/iniciar">Login</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </nav>
     </div>
 </head>
 
 <body>
-<div class="container mt-3">
-    <h2>Tabla Registro de Géneros</h2>
-    <table class="table table-dark">
-        <thead>
-        <tr>
-            <th>Id Género</th>
-            <th>Título</th>
-            <th>Categoria</th>
-            <th>Usuario</th>
-            <th>ID Usuario</th>
-            <th>Acciones</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item : ${generos}">
-            <td th:text="${item.id}"></td>
-            <td th:text="${item.titulo}"></td>
-            <td th:text="${item.categoria}"></td>
-            <td th:text="${item.usuario.nombre}"></td>
-            <td th:text="${item.usuario.id}"></td>
-            <td>
-                <a  class="btn btn-success">Editar</a>
-                <a  class="btn btn-danger">Eliminar</a>
-            </td>
 
-
-        </tr>
 
         </tbody>
-    </table>
-    <a class="button btn-danger" href="/logout">salir</a>
+
+    <a href="/login" class="btn btn-danger">SALIR</a>
 </div>
 
 </body>

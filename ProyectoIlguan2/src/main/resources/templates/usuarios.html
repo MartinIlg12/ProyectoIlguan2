@@ -161,7 +161,7 @@
             <ul>
                 <li><a href="/">Peliculas</a></li>
                 <li><a href="/registro">Registro</a></li>
-                <li><a href="/iniciar">Login</a></li>
+                <li><a href="/login">Login</a></li>
             </ul>
         </nav>
     </div>
@@ -174,10 +174,11 @@
         <thead>
         <tr>
             <th>Id Usuario</th>
+            <th>Rol</th>
             <th>Nombre Usuario</th>
             <th>Correo</th>
             <th>Contraseña</th>
-            <th>Fecha de Nacimiento</th>
+            <th>Fecha de Creación</th>
             <th>Acciones</th>
         </tr>
         </thead>
@@ -185,6 +186,7 @@
         <tr th:each="usuario : ${usuarioss}">
             <td th:text="${usuario.id}"></td>
             <td th:text="${usuario.nombre}"></td>
+            <td th:text="${usuario.rol}"></td>
             <td th:text="${usuario.correo}"></td>
             <td th:text="${usuario.contrasenia}"></td>
             <td th:text="${usuario.fecha}"></td>
@@ -196,6 +198,7 @@
 
         </tbody>
     </table>
+    <a href="/logout" class="btn btn-danger">SALIR</a>
 </div>
 
 </body>

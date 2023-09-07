@@ -3,6 +3,8 @@ package com.itsqmet.ProyectoIlguan2.controller;
 import com.itsqmet.ProyectoIlguan2.entidades.Usuario;
 import com.itsqmet.ProyectoIlguan2.repositorios.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +19,10 @@ public class UsuarioController {
 
     @Autowired
     UsuarioRepository usuarioRepository;
+    @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
 
     @GetMapping("/registro")
     public String registro(Model model){
@@ -32,7 +38,15 @@ public class UsuarioController {
 
     @PostMapping("/registro")
     public String crear(Usuario usuario){
-        usuarioRepository.save(usuario);
+        Usuario usuario1 = new Usuario();
+
+        usuario1.setId(usuario.getId());
+        usuario1.setNombre(usuario.getNombre());
+        usuario1.setContrasenia(bCryptPasswordEncoder().encode(usuario.getContrasenia()));
+        usuario1.setCorreo(usuario.getCorreo());
+        usuario1.setRol(usuario.getRol());
+        usuario1.setFecha(usuario.getFecha());
+        usuarioRepository.save(usuario1);
         return "redirect:/genero/form";
     }
 

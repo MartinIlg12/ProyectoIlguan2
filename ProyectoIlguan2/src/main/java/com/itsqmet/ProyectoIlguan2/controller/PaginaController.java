@@ -10,11 +10,18 @@ public class PaginaController {
     public String home(){
         return "home";
     }
-    @GetMapping("/iniciar")
-    public String iniciar(){
-        return "iniciar";
+
+
+    @GetMapping("/admin/gestion")
+    public  String admin(){
+        return "administrador/admin";
+    }
+    @GetMapping("/user/usuarios")
+    public  String user(){
+        return "users/users";
     }
 
-    }
+
+}
 
 
