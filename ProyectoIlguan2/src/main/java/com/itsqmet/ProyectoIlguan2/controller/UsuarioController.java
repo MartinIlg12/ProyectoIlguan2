@@ -57,9 +57,10 @@ public class UsuarioController {
         return "registro";
     }
 
-    @GetMapping("/eliminar/{id}")
+   @GetMapping("/eliminar/{id}")
     public String eliminar(@PathVariable int id){
         usuarioRepository.deleteById(id);
-        return"redirect:/usuarios";
-    }
+        return "redirect:/usuarios";
+   }
+
 }

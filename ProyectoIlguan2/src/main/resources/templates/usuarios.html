@@ -156,7 +156,7 @@
         }
     </style>
     <div class="menu container">
-        <a href="/static" class="logo"></a>
+        <a href="/" class="logo"></a>
         <nav class="navbar">
             <ul>
                 <li><a href="/">Peliculas</a></li>
@@ -191,8 +191,8 @@
             <td th:text="${usuario.contrasenia}"></td>
             <td th:text="${usuario.fecha}"></td>
             <td>
-                <a th:href="@{/editar/}+${usuario.id}" class="btn btn-success">Editar</a>
-                <a th:href="@{/eliminar/}+${usuario.id}"class="btn btn-danger">Eliminar</a>
+                <a th:href="@{/editar/} + ${usuario.id}" class="btn btn-success">Editar</a>
+                <a th:href="@{/eliminar/} + ${usuario.id}" class="btn btn-danger">Eliminar</a>
             </td>
         </tr>
 
